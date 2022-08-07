@@ -2,6 +2,7 @@
 
 name: Manual-Workflow
 
+# Set the workflow variable(s)
 env:
   user_name: 'Test Elek'
   demo_name: 'Variable Demo'
@@ -26,6 +27,10 @@ jobs:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
 
+    # Set the job variable(s)
+    env:
+      job_var1: "This is job variable-1"
+
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
@@ -47,6 +52,21 @@ jobs:
           echo "- in ${{ github.event.inputs.country }}"
 
       - name: Using workflow variables
+        # Set the step variable(s)
+        env:
+          step_var1: "Set-Var-1"
         run: |
           echo "Hello, $user_name!"
           echo "Welcome to $demo_name!!!"
+          echo "Job variable: $job_var1"
+          echo "::set-env name=user_name:Odeeka"
+          echo "::set-env name=new_user:Beluska"
+
+      - name: Using the changed variables
+        run: |
+          echo "Changed user name: $user_name"
+          echo "New user name: $new_user"
+      - name: Print all environment variables
+        run: |
+          echo "Print all environment variables"
+          env
