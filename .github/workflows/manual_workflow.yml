@@ -2,6 +2,10 @@
 
 name: Manual-Workflow
 
+env:
+  user_name: 'Test Elek'
+  demo_name: 'Variable Demo'
+
 # Controls when the workflow will run
 on:
   # Allows you to run this workflow manually from the Actions tab
@@ -41,3 +45,8 @@ jobs:
         run: |
           echo "Hi ${{ github.event.inputs.name }}!"
           echo "- in ${{ github.event.inputs.country }}"
+
+      - name: Using workflow variables
+        run: |
+          echo "Hello, $user_name!"
+          echo "Welcome to $demo_name!!!"
