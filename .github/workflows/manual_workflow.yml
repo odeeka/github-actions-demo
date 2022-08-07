@@ -76,3 +76,5 @@ jobs:
         run: |
           echo "Print all environment variables"
           env | sort
+      - name: Show an existing secret from repo-level
+        run: ${{ secrets.DEMO_REPO_ACTION_SECRET }}
