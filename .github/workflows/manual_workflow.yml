@@ -59,8 +59,8 @@ jobs:
           echo "Hello, $user_name!"
           echo "Welcome to $demo_name!!!"
           echo "Job variable: $job_var1"
-          echo "::set-env name=user_name:Odeeka"
-          echo "::set-env name=new_user:Beluska"
+          echo "::set-env name=user_name::Odeeka"
+          echo "::set-env name=new_user::Beluska"
 
       - name: Using the changed variables
         run: |
@@ -69,4 +69,4 @@ jobs:
       - name: Print all environment variables
         run: |
           echo "Print all environment variables"
-          env
+          env | sort
