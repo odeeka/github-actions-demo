@@ -6,6 +6,7 @@ name: Manual-Workflow
 env:
   user_name: 'Test Elek'
   demo_name: 'Variable Demo'
+  ACTIONS_ALLOW_UNSECURE_COMMANDS: 'true'
 
 # Controls when the workflow will run
 on:
