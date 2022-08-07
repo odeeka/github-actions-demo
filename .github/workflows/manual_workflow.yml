@@ -4,9 +4,14 @@ name: Manual-Workflow
 
 # Set the workflow variable(s)
 env:
+  ACTIONS_ALLOW_UNSECURE_COMMANDS: 'true' # because of 'set-env' disabled command
   user_name: 'Test Elek'
   demo_name: 'Variable Demo'
-  ACTIONS_ALLOW_UNSECURE_COMMANDS: 'true' # because of 'set-env' disabled command
+  my@newvar@$: "specialvarval"
+  $varwith$: "valwith$"
+  1mynewnumvar: "numvarval"
+  my-var: "DashVarvalue"
+  my1_var1: "my1_var1value"
 
 # Controls when the workflow will run
 on:
